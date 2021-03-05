@@ -10,7 +10,7 @@ export const AlbumList = () => {
      *   is now locked behind Patreon.
      *  See https://theaudiodb.com/api_guide.php
      */
-    fetch("https://theaudiodb.com/api/v1/json/1/searchalbum.php?s=coldplay")
+    fetch("https://theaudiodb.com/api/v1/json/1/album.php?i=112024")
       .then((res) => res.json())
       .then((json) => {
         // json.loved -> json.album since we changed endpoints
@@ -25,7 +25,7 @@ export const AlbumList = () => {
           <img src={`${album.strAlbumThumb}/preview`} alt={album.strAlbum} />
           <h2>{album.strAlbum}</h2>
           <h3>
-            <Link to={`/artists/${album.idArtist}`}>{album.strArtist}</Link>
+            <Link to={`/albums/${album.idAlbum}`}>{album.strAlbum}</Link>
           </h3>
         </div>
       ))}
